@@ -1,0 +1,42 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/face.jpg</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="breadcrumbs" remove="true"/>
+        <referenceBlock name="footer">
+            <block
+                    template="content.phtml"
+                    class="johanjohan\HelloWorld\Block\Main"
+                    name="johanjohan_helloworld_content"/>
+        </referenceBlock>
+        <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="about-us-link"  before="wish-list-link">
+                <arguments>
+                    <argument name="label" xsi:type="string">About us</argument>
+                    <argument name="path" xsi:type="string">about-us</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="gallery-link" before="wish-list-link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Gallery</argument>
+                    <argument name="path" xsi:type="string">gallery</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="form.subscribe" remove="true"/>
+
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceContainer name="footer">
+            <block before="-" class="Magento\Cms\Block\Block" name="siteMenu">
+                <argument>
+                    <argument name="block_id" xsi:type="string">site_menu</argument>
+                </argument>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
